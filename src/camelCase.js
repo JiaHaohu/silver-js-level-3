@@ -19,12 +19,34 @@ export default function camelCase (string) {
   // TODO:
   //   Please implement the function.
   // <-start-
+  const partArray = useRegexSplitString(string);
 
+  let result = '';
+
+  for (let index = 0; index < partArray.length; index++) {
+    const element = partArray[index];
+    if (index === 0) {
+      result += element.toLowerCase();
+    } else {
+      result += toCamelCaseFormat(element.toLowerCase());
+    }
+  }
+
+  return result;
   // --end-->
 }
 
 // TODO:
 //   You can add additional code here if you want
 // <-start-
+function useRegexSplitString (string) {
+  const re = /[A-Za-z0-9]+/g;
+  return string.match(re);
+}
+
+function toCamelCaseFormat (string) {
+  const res = string.slice(1);
+  return string[0].toUpperCase() + res;
+}
 
 // --end-->

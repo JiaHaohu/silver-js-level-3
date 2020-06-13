@@ -1,7 +1,7 @@
 import camelCase from './camelCase';
 
 describe('when using remove', () => {
-  it('should work with numbers', () => {
+  fit('should work with numbers', () => {
     expect(camelCase('12 feet')).toBe('12Feet');
     expect(camelCase('enable 6h format')).toBe('enable6hFormat');
     expect(camelCase('enable 24H format')).toBe('enable24hFormat');
