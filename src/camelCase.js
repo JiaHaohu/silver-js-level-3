@@ -19,6 +19,10 @@ export default function camelCase (string) {
   // TODO:
   //   Please implement the function.
   // <-start-
+  if (string === null || string === undefined) {
+    return string;
+  }
+
   const partArray = useRegexSplitString(string);
 
   let result = '';
